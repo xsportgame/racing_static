@@ -1,0 +1,12 @@
+{
+"companyName": "Roolmi",
+"productName": "FormulaSport",
+"dataUrl": "WebGL_v1.26.data.unityweb",
+"wasmCodeUrl": "WebGL_v1.26.wasm.code.unityweb",
+"wasmFrameworkUrl": "WebGL_v1.26.wasm.framework.unityweb",
+"TOTAL_MEMORY": 301989888,
+"graphicsAPI": ["WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}

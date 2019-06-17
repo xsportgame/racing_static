@@ -1,0 +1,54 @@
+ManifestFileVersion: 0
+CRC: 1140395310
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2e0b48f4eb37b71d557659162b73c6dd
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f0173c815f23a43c68eef07dcebbc715
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 20
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: d1295a2713a5a2348a9ef6896094d60f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: df90f45a092f47a4598843f378937c34, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 00d48b0ca28c9f043b5bfead540abcf0, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+Assets:
+- Assets/Prefabs/Tracks/07_SpaFrancorchamps/Track_7.prefab
+Dependencies: []
