@@ -1,0 +1,37 @@
+ManifestFileVersion: 0
+CRC: 2206287863
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: track_1.track
+      Dependencies: {}
+    Info_1:
+      Name: track_7.track
+      Dependencies: {}
+    Info_2:
+      Name: track_6.track
+      Dependencies: {}
+    Info_3:
+      Name: track_2.track
+      Dependencies: {}
+    Info_4:
+      Name: track_8.track
+      Dependencies: {}
+    Info_5:
+      Name: track_12.track
+      Dependencies: {}
+    Info_6:
+      Name: track_5.track
+      Dependencies: {}
+    Info_7:
+      Name: track_3.track
+      Dependencies: {}
+    Info_8:
+      Name: track_4.track
+      Dependencies: {}
+    Info_9:
+      Name: track_9.track
+      Dependencies: {}
+    Info_10:
+      Name: track_10.track
+      Dependencies: {}
