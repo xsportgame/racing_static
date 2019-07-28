@@ -5,14 +5,14 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Unity WebGL Player |  FormulaSport</title>
 		<link rel="stylesheet" href="TemplateData/style.css?v=10">
-		<script src="TemplateData/UnityProgress.js?v=57"></script>
+		<script src="TemplateData/UnityProgress.js?v=171"></script>
 	
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="//vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
-		<script src="TemplateData/js/config.js?v=71"></script>
+		<script src="TemplateData/js/config.js?v=68"></script>
 		<script src="TemplateData/js/sockets.js?v=63"></script>
-		<script type="text/javascript" src='TemplateData/js/social_network/sns.js?v=57' defer="defer"></script>
-		<script type="text/javascript" src='TemplateData/js/error_logger.js?v=57' defer="defer"></script>
+		<script type="text/javascript" src='TemplateData/js/social_network/sns.js?v=171' defer="defer"></script>
+		<script type="text/javascript" src='TemplateData/js/error_logger.js?v=171' defer="defer"></script>
 			
 		<style>
 			#gameContainer {
@@ -101,6 +101,15 @@
 						</ol>
 					</div>
 				</div>
+				<div id="tech_works" class="info_popup" style="display:none;">
+					<div class="turn_on_help">
+						<h3>Ведутся технические работы</h3>
+						<ol>
+							<li>Это продлится примерно до 23:00 по московскому времени
+							</li>
+						</ol>
+					</div>
+				</div>
 				<div id="_no_webgl" style="display:none;">
 					<div class="turn_on_help">
 						<h3>Ранний доступ</h3>
@@ -116,7 +125,7 @@
 			</div>
 		</div>
 		<script type='text/javascript'>
-		  
+		
 				var gameInstance = null;
 		getParameterByName = function (name, url) {
 			if (!url) url = window.location.href;
@@ -126,7 +135,7 @@
 			if (!results[2]) return '';
 			return decodeURIComponent(results[2].replace(/\+/g, " "));
 		}
-		var data_v = 57;//getParameterByName("data_v", location.href);
+		var data_v = 171;//getParameterByName("data_v", location.href);
 		  
 		  var webglEnabled = true;
 		  function checkCompatibility() {
@@ -265,19 +274,21 @@
 			//VK.callMethod("setLocation", '');
 		} else{
 			document.getElementById("game_container").style.display = "block";
-			var techWorks = false && (getParameterByName("viewer_id", location.href) != "9638009") && (getParameterByName("viewer_id", location.href) != "157368762")
+			var techWorks = true && (getParameterByName("viewer_id", location.href) != "9638009") && (getParameterByName("viewer_id", location.href) != "157368761")
 			if (techWorks) {
 				document.getElementById("preloader").style.display = "none";
-				document.getElementById("no_webgl").style.display = "block";
+				document.getElementById("tech_works").style.display = "block";
+				document.getElementById("no_webgl").style.display = "none";
 			} else {
+				document.getElementById("tech_works").style.display = "none";
 				document.getElementById("no_webgl").style.display = "none";
 				document.getElementById("preloader").style.display = "block";
 				loadJS("Build/UnityLoader.js?data_v=" + data_v, function(){
-					gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL_v1.26.json", {onProgress: UnityProgress});
+					gameInstance = UnityLoader.instantiate("gameContainer", "Build/WebGL_v1.70.json", {onProgress: UnityProgress});
 				}, document.body)
 			
 			}
-			var DEBUG = false;
+			var DEBUG = true;
 			if(!DEBUG){
 				if(!window.console) window.console = {};
 				var methods = ["log", "debug", "info"];
@@ -347,6 +358,26 @@
 				}
 				SendMessage("Canvas", "SetScaleForDevice", devicePixelRatio)
 			}
+			
+			document.addEventListener('visibilitychange', function(){
+					var time = new Date();
+					if (document.hidden) {
+						console.log(time + ' the user has left tab');
+					} else {
+						SendMessage("SessionController", "OnFocus")
+						console.log(time + ' the user has returned to the tab');
+					} 
+			})
+			var focused = false;
+			window.parent.addEventListener("focus", function () {
+					if (!focused) {
+						focused = true;
+						SendMessage("SessionController", "OnFocus")
+					}
+			})
+			window.parent.addEventListener("blur", function () {
+				focused = false;
+			})
 		</script>
 	</body>
 </html>
