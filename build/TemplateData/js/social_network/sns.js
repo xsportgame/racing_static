@@ -136,6 +136,10 @@
 		if (localStorage[key] != undefined) {
 			data.value = localStorage[key];
 		}
+			
+		if (key === "hints") {
+			data.value = false;
+		}
 		SendMessage("SocialNetwork", "ReceiveStorageValue", JSON.stringify(data));
 	}
 

@@ -4,15 +4,15 @@
 		<meta charset="utf-8">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Unity WebGL Player |  FormulaSport</title>
-		<link rel="stylesheet" href="TemplateData/style.css?v=10">
-		<script src="TemplateData/UnityProgress.js?v=171"></script>
+		<link rel="stylesheet" href="TemplateData/style.css?v=172">
+		<script src="TemplateData/UnityProgress.js?v=172"></script>
 	
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="//vk.com/js/api/xd_connection.js?2"  type="text/javascript"></script>
-		<script src="TemplateData/js/config.js?v=68"></script>
-		<script src="TemplateData/js/sockets.js?v=63"></script>
-		<script type="text/javascript" src='TemplateData/js/social_network/sns.js?v=171' defer="defer"></script>
-		<script type="text/javascript" src='TemplateData/js/error_logger.js?v=171' defer="defer"></script>
+		<script src="TemplateData/js/config.js?v=172"></script>
+		<script src="TemplateData/js/sockets.js?v=172"></script>
+		<script type="text/javascript" src='TemplateData/js/social_network/sns.js?v=172' defer="defer"></script>
+		<script type="text/javascript" src='TemplateData/js/error_logger.js?v=172' defer="defer"></script>
 			
 		<style>
 			#gameContainer {
@@ -135,7 +135,7 @@
 			if (!results[2]) return '';
 			return decodeURIComponent(results[2].replace(/\+/g, " "));
 		}
-		var data_v = 171;//getParameterByName("data_v", location.href);
+		var data_v = 172;//getParameterByName("data_v", location.href);
 		  
 		  var webglEnabled = true;
 		  function checkCompatibility() {
@@ -274,7 +274,7 @@
 			//VK.callMethod("setLocation", '');
 		} else{
 			document.getElementById("game_container").style.display = "block";
-			var techWorks = true && (getParameterByName("viewer_id", location.href) != "9638009") && (getParameterByName("viewer_id", location.href) != "157368761")
+			var techWorks = false && (getParameterByName("viewer_id", location.href) != "9638009") && (getParameterByName("viewer_id", location.href) != "157368761")
 			if (techWorks) {
 				document.getElementById("preloader").style.display = "none";
 				document.getElementById("tech_works").style.display = "block";
@@ -288,7 +288,7 @@
 				}, document.body)
 			
 			}
-			var DEBUG = true;
+			var DEBUG = false;
 			if(!DEBUG){
 				if(!window.console) window.console = {};
 				var methods = ["log", "debug", "info"];
@@ -306,10 +306,10 @@
 			var c = document.getElementById("canvas");
 			var w = c.width;
 			var h = c.height;
-			c.width = w * devicePixelRatio; // devicePixelRatio = 2.0 on a retina screen
-			c.height = h * devicePixelRatio;
-			c.style.width =(w * devicePixelRatio) + "px";
-			c.style.height = (h * devicePixelRatio)+ "px";
+			//c.width = w * devicePixelRatio; // devicePixelRatio = 2.0 on a retina screen
+			//c.height = h * devicePixelRatio;
+			//c.style.width =(w * devicePixelRatio) + "px";
+			//c.style.height = (h * devicePixelRatio)+ "px";
 			
 			var scaleDownByPixelRatio = function() {
 				if(devicePixelRatio > 1) {
@@ -318,7 +318,7 @@
 					canvas.style.transform = "scale("+1.0/devicePixelRatio+")";
 				}
 			}
-			scaleDownByPixelRatio();
+			//scaleDownByPixelRatio();
 		}
 		
 		
@@ -356,7 +356,7 @@
 				if (!isSafari && devicePixelRatio != 1) {
 					devicePixelRatio = 1;
 				}
-				SendMessage("Canvas", "SetScaleForDevice", devicePixelRatio)
+				//SendMessage("Canvas", "SetScaleForDevice", devicePixelRatio)
 			}
 			
 			document.addEventListener('visibilitychange', function(){
